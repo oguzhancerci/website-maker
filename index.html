@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakeItFast — Hızlı Website Oluşturucu</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════════════════════════ -->
+  <header class="header">
+    <div class="header-brand">
+      <span>◆</span> MakeItFast <span class="dot">•</span>
+    </div>
+    <div class="header-actions">
+      <span style="font-size:.8rem;color:#4B5563;" id="site-count-badge"></span>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
+       INTRO
+  ════════════════════════════════════════════════════════════ -->
+  <section class="dash-intro">
+    <h1>Websitenizi<br><em>dakikalar içinde</em> oluşturun</h1>
+    <p>Şablonu seçin, bilgileri girin, renkleri ayarlayın — bitince HTML dosyasını indirin ve müşteriye verin.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════════════════════ -->
+  <main class="dash-content">
+
+    <!-- ─── TEMPLATES ──────────────────────────────────── -->
+    <div class="section-header">
+      <div>
+        <div class="section-title">🎨 Şablon Seçin</div>
+        <div class="section-subtitle">Müşterinize uygun bir şablon seçerek başlayın</div>
+      </div>
+    </div>
+
+    <div class="templates-grid">
+
+      <!-- Restoran -->
+      <div class="template-card tpl-restaurant">
+        <div class="template-preview">
+          <span class="emoji">🍽️</span>
+        </div>
+        <div class="template-info">
+          <div class="template-name">Restoran & Kafe</div>
+          <div class="template-desc">Menü bölümü, rezervasyon, iletişim ve galeri içeren sıcak restoran şablonu.</div>
+          <div class="template-tags">
+            <span class="tag">Menü</span>
+            <span class="tag">Rezervasyon</span>
+            <span class="tag">Galeri</span>
+            <span class="tag">Harita</span>
+          </div>
+          <a class="btn btn-primary" href="editor.html?template=restaurant&id=new" onclick="createSite('restaurant')">
+            + Bu Şablonla Başla
+          </a>
+        </div>
+      </div>
+
+      <!-- Hizmet -->
+      <div class="template-card tpl-service">
+        <div class="template-preview">
+          <span class="emoji">🔧</span>
+        </div>
+        <div class="template-info">
+          <div class="template-name">Hizmet Firması</div>
+          <div class="template-desc">Berber, tamirci, temizlik, hukuk gibi hizmet işletmeleri için profesyonel şablon.</div>
+          <div class="template-tags">
+            <span class="tag">Hizmetler</span>
+            <span class="tag">Adımlar</span>
+            <span class="tag">İletişim</span>
+            <span class="tag">Neden Biz</span>
+          </div>
+          <a class="btn btn-primary" href="editor.html?template=service&id=new" onclick="createSite('service')">
+            + Bu Şablonla Başla
+          </a>
+        </div>
+      </div>
+
+      <!-- Genel -->
+      <div class="template-card tpl-business">
+        <div class="template-preview">
+          <span class="emoji">🏢</span>
+        </div>
+        <div class="template-info">
+          <div class="template-name">Genel İşletme</div>
+          <div class="template-desc">Her tür işletmeye uygun modern, kurumsal görünümlü çok amaçlı şablon.</div>
+          <div class="template-tags">
+            <span class="tag">Ürünler</span>
+            <span class="tag">Hakkımızda</span>
+            <span class="tag">Özellikler</span>
+            <span class="tag">İstatistikler</span>
+          </div>
+          <a class="btn btn-primary" href="editor.html?template=business&id=new" onclick="createSite('business')">
+            + Bu Şablonla Başla
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ─── HOW IT WORKS ────────────────────────────────── -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:56px;">
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px;text-align:center;">
+        <div style="font-size:1.6rem;margin-bottom:10px;">1️⃣</div>
+        <div style="font-size:.88rem;font-weight:700;color:#E2E8F0;margin-bottom:6px;">Şablon Seç</div>
+        <div style="font-size:.75rem;color:#4B5563;line-height:1.5;">3 farklı hazır şablondan birini seçin</div>
+      </div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px;text-align:center;">
+        <div style="font-size:1.6rem;margin-bottom:10px;">2️⃣</div>
+        <div style="font-size:.88rem;font-weight:700;color:#E2E8F0;margin-bottom:6px;">Bilgileri Gir</div>
+        <div style="font-size:.75rem;color:#4B5563;line-height:1.5;">Metinlere tıklayarak müşteri bilgilerini yazın</div>
+      </div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px;text-align:center;">
+        <div style="font-size:1.6rem;margin-bottom:10px;">3️⃣</div>
+        <div style="font-size:.88rem;font-weight:700;color:#E2E8F0;margin-bottom:6px;">Renk & Sosyal</div>
+        <div style="font-size:.75rem;color:#4B5563;line-height:1.5;">Renk teması ve sosyal medya linklerini ayarlayın</div>
+      </div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px;text-align:center;">
+        <div style="font-size:1.6rem;margin-bottom:10px;">4️⃣</div>
+        <div style="font-size:.88rem;font-weight:700;color:#E2E8F0;margin-bottom:6px;">HTML İndir</div>
+        <div style="font-size:.75rem;color:#4B5563;line-height:1.5;">Tek tıkla hazır HTML dosyasını alın</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ─── SAVED SITES ─────────────────────────────────── -->
+    <div class="section-header">
+      <div>
+        <div class="section-title">💾 Kayıtlı Siteler</div>
+        <div class="section-subtitle">Daha önce oluşturduğunuz ve kaydettiğiniz siteler</div>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="loadSitesList()">🔄 Yenile</button>
+    </div>
+
+    <div class="sites-list" id="sites-list">
+      <div class="empty-state">
+        <div class="empty-icon">📂</div>
+        <p>Henüz kayıtlı site yok.<br>Yukarıdan bir şablon seçerek başlayın.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ─── DELETE MODAL ──────────────────────────────────── -->
+  <div class="modal-overlay" id="delete-modal">
+    <div class="modal">
+      <h3>🗑️ Siteyi Sil</h3>
+      <p>Bu siteyi silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.</p>
+      <div class="modal-btns">
+        <button class="btn btn-ghost" onclick="closeDeleteModal()">İptal</button>
+        <button class="btn btn-danger" id="confirm-delete-btn">Evet, Sil</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const TEMPLATE_META = {
+      restaurant: { name: 'Restoran & Kafe', emoji: '🍽️', iconClass: 'site-icon-restaurant' },
+      service:    { name: 'Hizmet Firması',  emoji: '🔧', iconClass: 'site-icon-service'    },
+      business:   { name: 'Genel İşletme',   emoji: '🏢', iconClass: 'site-icon-business'   }
+    };
+
+    // When clicking "Bu Şablonla Başla", generate a new ID so it's a fresh site
+    function createSite(templateId) {
+      const id = Date.now().toString();
+      const url = 'editor.html?template=' + templateId + '&id=' + id;
+      window.location.href = url;
+      return false;
+    }
+
+    function loadSitesList() {
+      const index = JSON.parse(localStorage.getItem('sites_index') || '[]');
+      const list = document.getElementById('sites-list');
+      const badge = document.getElementById('site-count-badge');
+
+      if (badge) badge.textContent = index.length + ' kayıtlı site';
+
+      if (!index.length) {
+        list.innerHTML = `<div class="empty-state"><div class="empty-icon">📂</div><p>Henüz kayıtlı site yok.<br>Yukarıdan bir şablon seçerek başlayın.</p></div>`;
+        return;
+      }
+
+      list.innerHTML = index.map(site => {
+        const meta = TEMPLATE_META[site.template] || { name: site.template, emoji: '🌐', iconClass: '' };
+        const date = site.updatedAt ? new Date(site.updatedAt).toLocaleDateString('tr-TR', { day:'numeric', month:'long', year:'numeric', hour:'2-digit', minute:'2-digit' }) : '';
+        return `
+          <div class="site-card" id="sc-${site.id}">
+            <div class="site-icon ${meta.iconClass}">${meta.emoji}</div>
+            <div class="site-info">
+              <div class="site-name">${escHtml(site.name || 'İsimsiz Site')}</div>
+              <div class="site-meta">${meta.name} · Son güncelleme: ${date}</div>
+            </div>
+            <div class="site-actions">
+              <a class="btn btn-ghost btn-sm" href="editor.html?template=${site.template}&id=${site.id}">✏️ Düzenle</a>
+              <button class="btn btn-ghost btn-sm" onclick="downloadSite('${site.id}')">⬇ İndir</button>
+              <button class="btn btn-danger btn-sm" onclick="confirmDelete('${site.id}')">🗑</button>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    // Delete
+    let pendingDeleteId = null;
+
+    function confirmDelete(id) {
+      pendingDeleteId = id;
+      document.getElementById('delete-modal').classList.add('open');
+      document.getElementById('confirm-delete-btn').onclick = () => deleteSite(id);
+    }
+
+    function closeDeleteModal() {
+      document.getElementById('delete-modal').classList.remove('open');
+      pendingDeleteId = null;
+    }
+
+    function deleteSite(id) {
+      localStorage.removeItem('site_' + id);
+      let index = JSON.parse(localStorage.getItem('sites_index') || '[]');
+      index = index.filter(s => s.id !== id);
+      localStorage.setItem('sites_index', JSON.stringify(index));
+      closeDeleteModal();
+      loadSitesList();
+    }
+
+    // Download from dashboard
+    function downloadSite(id) {
+      const data = localStorage.getItem('site_' + id);
+      if (!data) { alert('Site verisi bulunamadı.'); return; }
+      const site = JSON.parse(data);
+
+      // We need templates to be loaded — open editor to export
+      // Quick workaround: redirect to editor with export param
+      const url = 'editor.html?template=' + site.template + '&id=' + id + '&autoexport=1';
+      window.open(url, '_blank');
+    }
+
+    // Close modal on overlay click
+    document.getElementById('delete-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeDeleteModal();
+    });
+
+    // Fix template card links to use createSite
+    document.querySelectorAll('.template-card .btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        const m = href.match(/template=(\w+)/);
+        if (m) createSite(m[1]);
+      });
+    });
+
+    // Init
+    loadSitesList();
+  </script>
+
+</body>
+</html>
