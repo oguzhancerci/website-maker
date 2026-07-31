@@ -565,6 +565,7 @@ function setupEditable() {
 
     el.addEventListener('click', function(e) {
       if (window._isDraggingElement) return;
+      if (!_mobileEditOn) return;
       e.stopPropagation();
       if (this.tagName === 'A') e.preventDefault(); // href navigasyonunu engelle
       if (this.getAttribute('contenteditable') === 'true') return;
@@ -1553,10 +1554,14 @@ function toggleMobileEditMode() {
     canvas.classList.add('edit-locked');
     btn.textContent = '🔒 Düzenleme: Kapalı';
     btn.classList.add('edit-off');
-    // Açık panel ve seçimi kapat
+    // Açık panel, seçim ve aktif editable'ı kapat
     deselectElement();
     const pp = document.getElementById('props-panel');
     if (pp) pp.classList.add('hidden');
+    document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+      el.setAttribute('contenteditable', 'false');
+      el.blur();
+    });
   }
 }
 
