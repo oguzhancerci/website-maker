@@ -729,13 +729,21 @@ button { font-family: inherit; line-height: 1; }
   }
 }
 
-/* Canvas düzenleme kapalıyken drag/resize engelle */
-#canvas.edit-locked [data-item-id],
+/* Canvas düzenleme kapalıyken tüm editör butonlarını gizle */
 #canvas.edit-locked .drag-handle,
-#canvas.edit-locked section > .item-controls,
-#canvas.edit-locked .section-del-btn {
-  pointer-events: none !important;
+#canvas.edit-locked .item-controls,
+#canvas.edit-locked .section-del-btn,
+#canvas.edit-locked .gallery-remove-btn,
+#canvas.edit-locked .gallery-add-btn,
+#canvas.edit-locked .card-del-btn,
+#canvas.edit-locked .card-add-btn,
+#canvas.edit-locked .item-del-btn,
+#canvas.edit-locked .item-add-btn,
+#canvas.edit-locked .faq-remove-btn,
+#canvas.edit-locked .faq-editor-btns {
+  display: none !important;
 }
+#canvas.edit-locked [data-item-id] { pointer-events: none !important; }
 #canvas.edit-locked { user-select: none; }
 
 /* ─── SİDEBAR BACKDROP ──────────────────────────────────────── */
