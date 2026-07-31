@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 // TEMPLATES.JS — 3 hazır şablon (Wix kalitesinde, görsel yükleme destekli)
 // ============================================================
 
@@ -67,8 +67,6 @@ img{max-width:100%;display:block;}
 .rt-btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.25);}
 .rt-btn-outline{background:transparent;border:2px solid rgba(255,255,255,.7);color:#fff;}
 .rt-btn-outline:hover{background:rgba(255,255,255,.12);border-color:#fff;}
-.rt-scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.5);font-size:.75rem;display:flex;flex-direction:column;align-items:center;gap:6px;animation:bounce 2s infinite;}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
 
 /* SECTION SHARED */
 .rt-sec-label{display:inline-block;background:var(--primary,#C0392B);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:14px;}
@@ -212,7 +210,6 @@ img{max-width:100%;display:block;}
             <a href="#rt-contact" class="rt-btn rt-btn-outline editable" data-key="hero-btn2" data-tr="Rezervasyon Yap" data-en="Make Reservation">Rezervasyon Yap</a>
           </div>
         </div>
-        <div class="rt-scroll-hint">▼</div>
       </section>
 
       <!-- ABOUT -->
