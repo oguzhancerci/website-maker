@@ -373,6 +373,7 @@ function attachGalleryRemoveBtn(el) {
   btn.title = 'Fotoğrafı kaldır';
   btn.addEventListener('click', e => {
     e.stopPropagation();
+    if (!_mobileEditOn) return;
     const key = el.dataset.imgKey;
     if (siteData.galleryItems) siteData.galleryItems = siteData.galleryItems.filter(i => i.key !== key);
     if (siteData.images) delete siteData.images[key];
@@ -481,6 +482,7 @@ function _initCardGrid(grid) {
     btn.title = 'Kartı Sil';
     btn.onclick = (e) => {
       e.stopPropagation();
+      if (!_mobileEditOn) return;
       if (grid.querySelectorAll(':scope > .' + cardClass).length <= 1) {
         showToast('En az 1 kart gerekli', 'info'); return;
       }
@@ -524,6 +526,7 @@ function _initItemList(container) {
     btn.title = 'Sil';
     btn.onclick = (e) => {
       e.stopPropagation();
+      if (!_mobileEditOn) return;
       if (container.querySelectorAll(':scope > .' + itemClass).length <= 1) {
         showToast('En az 1 öğe gerekli', 'info'); return;
       }
@@ -1587,6 +1590,7 @@ function setupSectionDrag() {
     delBtn.addEventListener('click', e => {
       e.stopPropagation();
       e.preventDefault();
+      if (!_mobileEditOn) return;
       const secId = sec.id;
       // Bu bölüme işaret eden nav linklerini kaldır
       if (secId) {
@@ -3754,6 +3758,16 @@ document.addEventListener('contextmenu', function(e) {
 }, true);
 
 document.addEventListener('click', function() { _hideCtxMenu(); });
+
+// Hamburger açılınca canvas'ı en üste kaydır — position:fixed elemanlar
+// container-type:inline-size nedeniyle canvas'a hapslendiğinden scroll
+// edilince çarpı butonu görünmez alana kayıyor.
+document.addEventListener('click', function(e) {
+  const ham = e.target.closest('[class$="-ham"], .rt-ham, .sv-ham, .bz-ham');
+  if (!ham) return;
+  const scroll = document.getElementById('canvas-scroll');
+  if (scroll) scroll.scrollTop = 0;
+}, true);
 
 // ── Mouse position + hover element tracking ──────────────────────
 let _mouseX = 0, _mouseY = 0;
